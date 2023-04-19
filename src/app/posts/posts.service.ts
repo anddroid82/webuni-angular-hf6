@@ -13,6 +13,10 @@ export class PostsService {
     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts?_page=0&_limit=10');
   }
 
+  getPostDataObservable(id:number):Observable<Post> {
+    return this.http.get<Post>('https://jsonplaceholder.typicode.com/posts/'+id);
+  }
+  
 }
 
 export interface Post {

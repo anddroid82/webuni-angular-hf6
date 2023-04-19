@@ -1,0 +1,7 @@
+<div class="card" *ngIf="post">
+    <h5 class="card-header">{{post!.title}}</h5>
+    <div class="card-body">
+        <p class="card-text">{{post!.body}}</p>
+        <a routerLink="/posts" class="btn btn-primary">Vissza</a>
+    </div>
+</div>
