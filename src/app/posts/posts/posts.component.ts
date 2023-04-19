@@ -18,6 +18,9 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  
+  postSelect(id:number,event:Event) {
+    console.log(id);
+    event.stopPropagation();
+  }
 
 }
