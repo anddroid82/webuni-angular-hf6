@@ -17,6 +17,9 @@ export class PostsService {
     return this.http.get<Post>('https://jsonplaceholder.typicode.com/posts/'+id);
   }
   
+  getDeleteDataObservable(id:number):Observable<any> {
+    return this.http.delete<any>('https://jsonplaceholder.typicode.com/posts/'+id);
+  }
 }
 
 export interface Post {

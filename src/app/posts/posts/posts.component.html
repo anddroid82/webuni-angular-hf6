@@ -1,6 +1,6 @@
 <ul class="list-group">
   <li *ngFor="let post of posts" class="list-group-item d-flex justify-content-between align-items-center" [routerLink]="'/posts/'+post.id">
-    {{post.title}}
-    <span class="badge"><button class="btn btn-danger" (click)="postSelect(post.id,$event)">Töröl</button></span>
+    {{post.id+" - "+post.title}}
+    <span class="badge"><button class="btn btn-danger" (click)="deletePost(post.id,$event)">Töröl</button></span>
     </li>
 </ul>

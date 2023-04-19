@@ -18,8 +18,11 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  postSelect(id:number,event:Event) {
-    console.log(id);
+  deletePost(id:number,event:Event) {
+    //console.log(id);
+    this.postService.getDeleteDataObservable(id).subscribe( b => {
+      this.posts = this.posts.filter( p => p.id!==id);
+    });
     event.stopPropagation();
   }
 
