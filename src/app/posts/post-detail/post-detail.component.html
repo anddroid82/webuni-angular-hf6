@@ -2,6 +2,7 @@
     <h5 class="card-header">{{post!.title}}</h5>
     <div class="card-body">
         <p class="card-text">{{post!.body}}</p>
+        <p class="card-text">Felhasználó: <span  *ngIf="user">{{user!.name}}</span></p>
         <a routerLink="/posts" class="btn btn-primary">Vissza</a>
     </div>
 </div>

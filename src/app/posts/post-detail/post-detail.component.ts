@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PostDetailComponent implements OnInit {
   id:number;
   post:Post | undefined = undefined;
+  user:any = undefined;
 
   constructor(private route:ActivatedRoute, private router:Router, private postService:PostsService){
     this.id=0;
@@ -23,9 +24,12 @@ export class PostDetailComponent implements OnInit {
   }
   ngOnInit(): void {
     this.postService.getPostDataObservable(this.id).subscribe( p => {
-      console.log(p);
       this.post = p;
+      this.postService.getUserDataObservable(p.userId).subscribe( u => {
+        this.user = u;
+      })
     });
+
   }
 
 

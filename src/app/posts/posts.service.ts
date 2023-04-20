@@ -20,6 +20,10 @@ export class PostsService {
   getDeleteDataObservable(id:number):Observable<any> {
     return this.http.delete<any>('https://jsonplaceholder.typicode.com/posts/'+id);
   }
+
+  getUserDataObservable(id:number):Observable<any> {
+    return this.http.get<any>('https://jsonplaceholder.typicode.com/users/'+id);
+  }
 }
 
 export interface Post {
